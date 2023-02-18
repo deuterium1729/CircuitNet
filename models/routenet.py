@@ -74,6 +74,9 @@ class conv(nn.Module):
             nn.Conv2d(dim_out, dim_out, kernel_size=kernel_size, stride=stride, padding=padding, bias=bias),
             nn.BatchNorm2d(dim_out),
             nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(dim_out, dim_out, kernel_size=kernel_size, stride=stride, padding=padding, bias=bias),
+            nn.BatchNorm2d(dim_out),
+            nn.LeakyReLU(0.2, inplace=True),
         )
 
     def forward(self, input):
